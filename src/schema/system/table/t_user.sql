@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS "system".t_user (
     id SERIAL NOT NULL,
     c_login VARCHAR(50) NOT NULL,
-    c_password VARCHAR(50) NOT NULL,
+    c_password VARCHAR(255) NOT NULL,
     c_date_create TIMESTAMP WITH TIME ZONE NOT NULL,
     c_date_update TIMESTAMP WITH TIME ZONE NOT NULL
 );
