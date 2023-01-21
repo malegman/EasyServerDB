@@ -1,8 +1,11 @@
 CREATE OR REPLACE FUNCTION "system".register_user(_login VARCHAR(50), _password VARCHAR(255)) RETURNS INTEGER AS $$
+    DECLARE
+        _id INTEGER;
     BEGIN
         INSERT INTO "system".t_user (c_login, c_password, c_date_create, c_date_update)
         VALUES (_login, _password, now(), now())
-        RETURNING id;
+        RETURNING id INTO _id;
+        RETURN _id;
     END;
 $$
     LANGUAGE plpgsql
